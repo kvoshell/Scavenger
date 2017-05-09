@@ -1,0 +1,29 @@
+.navbar {
+  border: 1px solid black;
+}
+
+.navbar.container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.nav-item {
+  margin: 0 3rem;
+  font-size: 2rem;
+}
+
+.navbar-default.upper {
+  background-color: #C5C5C5
+}
+
+.navbar-default.lower {
+
+  background-color: #93B7BE;
+
+}
+
+.navbar-default.footer {
+  background-color: #393E41;
+  height: 10rem;
+}

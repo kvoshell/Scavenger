@@ -2,13 +2,45 @@
 <html>
 <head>
   <title>Scavenger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container-fluid">
+    <nav class="navbar-default fixed-top upper">
+      <div class="navbar container">
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Scavenger", '#', class: "nav-item nav-link" %></li>
+          <li><%= link_to "About", '#', class: "nav-item nav-link" %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Sign Out", '#', class: "nav-item nav-link" %></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <nav class="navbar-default lower">
+      <div class="navbar container">
+        <ul class="nav navbar-nav">
+          <li><%= button_to "New Bookmark", '#', class: "btn btn-default navbar-btn" %></li>
+          <li><%= button_to "Search Topics", '#', class: "btn btn-default navbar-btn" %></li>
+        </ul>
+      </div>
+    </nav>
 
-<%= yield %>
+    <%= yield %>
+
+  </div>
+
+    <nav class="navbar-default footer">
+      <div class="navbar container">
+        <ul class="nav navbar-nav">
+          <h4>&copy;2017 | Scavenger</h4>
+        </ul>
+      </div>
+    </nav>
 
 </body>
 </html>
