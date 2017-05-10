@@ -3,33 +3,55 @@
 // rgb(94,101,114) : med grey
 // rgb(197,197,197) : light grey
 // rgb(147,183,190) : light blue
+// rgba(0, 84, 131, 1) : dark blue
 // rgb(89,172,140) : med green
 // rgb(133,90,92) : light red
 // rgb(102,16,31) : dark red
 
 
-.navbar {
-  border: 1px solid black;
-}
+
 
 .navbar.container-fluid {
   position: relative;
   width: 100%;
   margin: 0 auto;
+
 }
 
-.nav-item {
-  margin: 0 3rem;
+ul .navbar-nav {
+  height: 50%;
+}
+
+li {
+  margin: 0 2.5rem;
   font-size: 1.75rem;
 }
 
 .navbar-default.upper {
-  background-color: rgb(102,16,31);
+  background-color: rgba(0, 84, 131, .7);
   margin: 0;
+  border: 0;
+  a.nav-item.nav-link {
+    color: rgb(192, 214, 223);
+  }
+  a.nav-item.nav-link:hover {
+    color: rgb(132,16,31);
+  }
 }
 
 .navbar-default.lower {
-  background-color: rgb(197,197,197);
+  background-color: rgb(192, 214, 223);
+  margin: 0;
+  border: 0;
+  text-align: center;
+  a.nav-item.nav-link.inverse{
+    color: rgb(0, 84, 131);
+  }
+  a.nav-item.nav-link.inverse:hover {
+    color: rgb(192, 214, 223);
+    background: rgb(0, 84, 131);
+    border-radius: 5%;
+  }
 }
 
 .navbar-default.footer {

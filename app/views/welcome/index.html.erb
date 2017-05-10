@@ -1,11 +1,11 @@
-<%= render "./partials/subheader" %>
-
-<div class="row landing">
-  <div class="col-md-3 sidebar">
-    <h1>Side Content Here</h1>
+<div class="row">
+  <div class="col-md-offset-7 col-md-4 main-page text">
+    <h1>All the best</h1>
+    <h1>of the Internet</h1>
+    <h1>at your fingertips.</h1>
   </div>
-  <div class="col-md-9 main-content">
-    <h1>Share your favorite bookmarks online.</h1>
-    <h1>See what others have bookmarked.</h1>
+  <div class="col-md-offset-7 col-md-4 main-page login">
+    <%= link_to "Log In", new_user_session_path, class: "main-page button" %>
+    <%= link_to "Sign Up", new_user_registration_path, class: "main-page button" %>
   </div>
 </div>

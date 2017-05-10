@@ -26,13 +26,49 @@
 
 html, body {
   height: 100%;
-  background-color: rgb(147, 183, 190);
+}
+
+body {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), image-url('landing_background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
 }
 
 .container-fluid {
   position: relative;
   min-height: 100%;
   padding: 0;
+}
+
+.main-page {
+  h1 {
+    font-size: 4.25rem;
+  } a.button {
+    text-decoration: none;
+    font-size: 2.75rem;
+    padding: 1.25rem;
+    margin: 1rem;
+    border: .5px solid white;
+    border-radius: 5%;
+  }
+  color: white;
+  text-align: center;
+  font-family: 'Josefin Sans', monospace;
+}
+
+.main-page.text {
+  margin-top: 8rem;
+}
+
+.main-page.login {
+  margin-top: 8rem;
+  text-align: center;
+}
+
+.main-page .field {
+  color: black;
 }
 
 .row .landing {
