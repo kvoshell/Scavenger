@@ -20,7 +20,8 @@ group :production do
  gem 'jquery-rails'
  gem 'turbolinks'
  gem 'bootstrap-sass'
- gem 'figaro'
+ gem 'figaro', '~> 1.0'
+ gem 'devise'
 
  group :development, :test do
    gem 'byebug'

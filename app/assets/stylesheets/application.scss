@@ -4,6 +4,17 @@
  */
 
 
+// Site Color Scheme:
+// rgb(57,62,65) : dark grey
+// rgb(94,101,114) : med grey
+// rgb(197,197,197) : light grey
+// rgb(147,183,190) : light blue
+// rgb(89,172,140) : med green
+// rgb(133,90,92) : light red
+// rgb(102,16,31) : dard red
+
+
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -15,11 +26,27 @@
 
 html, body {
   height: 100%;
-
+  background-color: rgb(147, 183, 190);
 }
 
 .container-fluid {
   position: relative;
   min-height: 100%;
   padding: 0;
+}
+
+.row .landing {
+  position: relative;
+  min-height: 100vh;
+  display:table;
+}
+
+.sidebar,.main-content {
+  height: 100vh;
+  display: table-cell;
+  vertical-align: top;
+}
+
+.sidebar {
+  border-right: 1px solid black;
 }

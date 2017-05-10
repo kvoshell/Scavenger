@@ -1,0 +1,13 @@
+<nav class="navbar-default lower">
+  <div class="navbar container-fluid">
+    <ul class="nav navbar-nav">
+      <li><%= button_to "New Bookmark", '#', class: "btn btn-default navbar-btn" %></li>
+      <li><%= button_to "Search Topics", '#', class: "btn btn-default navbar-btn" %></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+      <li>Hello, <strong><%= "#{current_user.email}!" %></strong></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

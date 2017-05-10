@@ -1,8 +1,18 @@
+// Site Color Scheme:
+// rgb(57,62,65) : dark grey
+// rgb(94,101,114) : med grey
+// rgb(197,197,197) : light grey
+// rgb(147,183,190) : light blue
+// rgb(89,172,140) : med green
+// rgb(133,90,92) : light red
+// rgb(102,16,31) : dark red
+
+
 .navbar {
   border: 1px solid black;
 }
 
-.navbar.container {
+.navbar.container-fluid {
   position: relative;
   width: 100%;
   margin: 0 auto;
@@ -10,20 +20,24 @@
 
 .nav-item {
   margin: 0 3rem;
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 .navbar-default.upper {
-  background-color: #C5C5C5
+  background-color: rgb(102,16,31);
+  margin: 0;
 }
 
 .navbar-default.lower {
-
-  background-color: #93B7BE;
-
+  background-color: rgb(197,197,197);
 }
 
 .navbar-default.footer {
   background-color: #393E41;
   height: 10rem;
+  text-align: center;
+  h4 {
+    padding-top: 4rem;
+    color: rgb(133,90,92);
+  }
 }
