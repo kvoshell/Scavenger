@@ -91,4 +91,9 @@ body {
 
 .main-content {
   overflow: scroll;
+  padding: 0;
+  ul, li {
+    margin: 0;
+    background-color: rgba(205, 205, 205, .35);
+  }
 }

@@ -1,15 +1,15 @@
-<div class="row">
-  <div class="col-md-offset-7 col-md-4 main-page text">
-    <h2>Log in</h2>
+<div class="row devise-pages">
+  <div class="col-md-offset-7 col-md-4 devise-modal">
+    <div class="modal-title">
+      <h2>Log in</h2><hr />
+    </div>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
-        <p><%= f.label :login %><br />
-        <%= f.text_field :login, autofocus: true %></p>
+        <span><%= f.text_field :login, placeholder: 'Username', autofocus: true %></span>
       </div>
 
       <div class="field">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <span><%= f.password_field :password, placeholder: 'Password',autocomplete: "off" %></span>
       </div>
 
       <% if devise_mapping.rememberable? -%>
@@ -24,8 +24,11 @@
     </div>
     <% end %>
 
-    <%= render "devise/shared/links" %>
-    <%= render "partials/devise_flash" %>
+    <div class="devise-partials">
+      <%= render "devise/shared/links" %>
+      <%= render "partials/devise_flash" %>
+    </div>
+
 
   </div>
 </div>
