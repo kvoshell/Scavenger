@@ -76,6 +76,7 @@ body {
   position: relative;
   min-height: 100vh;
   display:table;
+
 }
 
 .sidebar,.main-content {
@@ -86,4 +87,8 @@ body {
 
 .sidebar {
   border-right: 1px solid black;
+}
+
+.main-content {
+  overflow: scroll;
 }
