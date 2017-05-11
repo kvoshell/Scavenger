@@ -1,13 +1,20 @@
 <nav class="navbar-default lower">
   <div class="navbar container-fluid">
-    <ul class="nav navbar-nav">
-      <li><%= button_to "New Bookmark", '#', class: "btn btn-default navbar-btn" %></li>
-      <li><%= button_to "Search Topics", '#', class: "btn btn-default navbar-btn" %></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <% if user_signed_in? %>
-      <li>Hello, <strong><%= "#{current_user.email}!" %></strong></li>
-      <% end %>
-    </ul>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+        Scavenger <span class="glyphicon glyphicon-th-large"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navabar-collapse">
+      <ul class="nav navbar-nav">
+        <% if user_signed_in? %>
+          <li class="nav-item nav-link">Hi, <strong><%= "#{current_user.username}!" %></strong></li>
+        <% end %>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><%= link_to "New Bookmark", '#', class: "nav-item nav-link" %></li>
+        <li><%= link_to "Search Topics", '#', class: "nav-item nav-link" %></li>
+      </ul>
+    </div>
   </div>
 </nav>

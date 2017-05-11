@@ -25,7 +25,6 @@
 }
 
 html, body {
-  height: 100%;
 }
 
 body {
@@ -34,12 +33,14 @@ body {
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
+  // margin-bottom: 10rem;
 }
 
 .container-fluid {
   position: relative;
-  min-height: 100%;
+  height: 100%;
   padding: 0;
+  margin: 0;
 }
 
 .main-page {
