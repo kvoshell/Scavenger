@@ -1,22 +1,22 @@
-<div class="row">
-  <div class="col-md-offset-7 col-md-4 main-page text">
-    <h2>Forgot your password?</h2>
+<div class="row devise-pages">
+  <div class="col-md-offset-7 col-md-4 devise-modal">
+    <div class="modal-title">
+      <h2>Forgot your password?</h2><hr />
+    </div>
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <%= devise_error_messages! %>
+    <div class="field">
+      <span><%= f.email_field :email, placeholder: "Email", autofocus: true %></span>
+    </div>
 
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
-      </div>
-  </div>
-  <div class="col-md-offset-7 col-md-4 main-page login">
     <div class="actions">
       <%= f.submit "Send me reset password instructions" %>
     </div>
     <% end %>
 
-    <%= render "devise/shared/links" %>
-    <%= render "partials/devise_flash" %>
-
+    <div class="devise-partials">
+      <%= render "devise/shared/links" %>
+      <%= render "partials/devise_flash" %>
+    </div>
   </div>
 </div>
+<%= render "partials/footer" %>

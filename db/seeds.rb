@@ -1,5 +1,6 @@
 require 'faker'
 
+
   # admin = User.create!(
   #  email: 'admin@example.com',
   #  password: 'helloworld',
@@ -24,13 +25,23 @@ require 'faker'
 
    20.times do
      Topic.create!(
-       title: Faker::Hipster.sentence,
+      title: Faker::Hipster.sentence
       #  body: Faker::Hipster.paragraph
-     )
+      )
    end
 
    topics = Topic.all
 
+   100.times do
+     Bookmark.create!(
+      url: "https://www.hipster.com",
+      topic_id: rand(1..20),
+      title: Faker::Hipster.sentence
+     )
+   end
+
+   bookmarks = Bookmark.all
+
    puts "Seed Generated"
    puts "#{Topic.count} topics created."
-  #  puts "#{Wiki.count} wikis created."
+   puts "#{Bookmark.count} bookmarks created."

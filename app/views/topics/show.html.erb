@@ -1,2 +1,22 @@
-<h1>Topics#show</h1>
-<p>Find me in app/views/topics/show.html.erb</p>
+<%= render "./partials/subheader" %>
+
+  <div class="row topics">
+
+    <%= render "./partials/sidebar" %>
+
+  <div class="col-md-9 main-content">
+    <% @topic.bookmarks.each do |bookmark| %>
+      <ul class="list-group">
+        <li class="list-group-item justify-content-between">
+          <h4><%= link_to bookmark.url, topic_path(@topic, bookmark) %></h4>
+          <p><%= "#{bookmark.title}" %></p>
+          <p><%= "creator name | #{bookmark.created_at.strftime("%b %d, %Y")}" %></p>
+          <span class="badge badge-default badge-pill"><%= "Favorites: #{rand(1..35)}" %></span>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+</div>
+
+
+<%= render "./partials/footer" %>

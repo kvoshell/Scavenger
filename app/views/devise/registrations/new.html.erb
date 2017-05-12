@@ -1,37 +1,32 @@
-<div class="row">
-  <div class="col-md-offset-7 col-md-4 main-page text">
-    <h2>Sign up</h2>
+<div class="row devise-pages">
+  <div class="col-md-offset-7 col-md-4 devise-modal-large">
+    <div class="modal-title">
+      <h2>Sign up</h2><hr />
+    </div>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
 
-      <div class="field">
-        <p><%= f.label :username %><br />
-        <%= f.text_field :username, autofocus: true %></p>
-        <p><%= f.label :email %><br />
-        <%= f.email_field :email %></p>
-      </div>
+    <div class="field">
+      <span><%= f.text_field :username, placeholder: "Username", autofocus: true %></p></span>
+      <span><%= f.email_field :email, placeholder: "Email" %></p></span>
+    </div>
 
-      <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
+    <div class="field">
+      <span><%= f.password_field :password, placeholder: "Password", autocomplete: "off" %></span>
+    </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </div>
-  </div>
-  <div class="col-md-offset-7 col-md-4 main-page login">
+    <div class="field">
+      <span><%= f.password_field :password_confirmation, placeholder: "Confirm Password", autocomplete: "off" %></span>
+    </div>
+
     <div class="actions">
       <%= f.submit "Sign up" %>
     </div>
     <% end %>
 
-    <%= render "devise/shared/links" %>
-    <%= render "partials/devise_flash" %>
-
+    <div class="devise-partials">
+      <%= render "devise/shared/links" %>
+      <%= render "partials/devise_flash" %>
+    </div>
   </div>
 </div>
+<%= render "partials/footer" %>

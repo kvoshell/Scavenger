@@ -1,72 +1,59 @@
-// Site Color Scheme:
-// rgb(57,62,65) : dark grey
-// rgb(94,101,114) : med grey
-// rgb(197,197,197) : light grey
-// rgb(147,183,190) : light blue
-// rgba(0, 84, 131, 1) : dark blue
-// rgb(89,172,140) : med green
-// rgb(133,90,92) : light red
-// rgb(102,16,31) : dark red
-
-
-
+@import 'imports/variables';
 
 .navbar.container-fluid {
   position: relative;
   width: 100%;
   margin: 0 auto;
-
-}
-
-ul .navbar-nav {
-  height: 50%;
-}
-
-li {
-  margin: 0 2.5rem;
-  font-size: 1.75rem;
 }
 
 .navbar-default.upper {
-  background-color: rgba(0, 84, 131, .7);
+  background-color: $navbar-dark-opaque;
   margin: 0;
   border: 0;
+  @include navbar-items;
+
   a.nav-item.nav-link {
-    color: rgb(192, 214, 223);
+    color: $navbar-light;
   }
   a.nav-item.nav-link:hover {
-    color: rgb(132,16,31);
+    color: $red-links;
   }
 }
 
 .navbar-default.lower {
-  background-color: rgba(192, 214, 223, .8);
+  background-color: $navbar-light-opaque;
   margin: 0;
   border: 0;
   text-align: center;
+  border-bottom: 1px solid $background-transparent;
+  @include navbar-items;
+
   li.nav-item.nav-link {
-    margin: 1rem;
+    height: 100%;
   }
   a.nav-item.nav-link{
-    color: rgb(0, 84, 131);
+    color: $navbar-dark;
   }
   a.nav-item.nav-link:hover {
-    color: rgb(132,16,31);
-    border-radius: 5%;
+    color: $red-links;
   }
+}
 
+.nav.navbar-nav {
+  height: 100%
 }
 
 .navbar-default.footer {
-  position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: #393E41;
-  height: 10rem;
+  background-color: $background-opaque;
+  height: 10vh;
   text-align: center;
-  h4 {
-    padding-top: 4rem;
+
+  h4,
+  a {
+    padding-top: 3vh;
     margin: 0;
-    color: rgb(133,90,92);
+    color: $red-links;
   }
 }

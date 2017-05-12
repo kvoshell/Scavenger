@@ -1,3 +1,39 @@
-.row.landing{
-  background-color: rgba(205, 205, 205, .85);
+@import 'imports/variables';
+
+
+.row.topics{
+  background-color: $background-fill;
+}
+
+.sidebar {
+
+  .sidebar-title {
+    text-align: center;
+    margin-top: 3%;
+  }
+  .sidebar-stats {
+    width: 65%;
+    margin: 0 auto;
+  }
+}
+
+.col-md-9.main-content {
+  padding-left: 0;
+  border-left: 1px solid $background-transparent;
+  
+  ul,
+  li.list-group-item {
+    margin: 0;
+    background-color: $background-fill-opaque;
+    border-radius: 0%;
+    border-bottom: 1px solid $background-transparent;
+  }
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $red-links;
+    text-decoration: none;
+  }
 }

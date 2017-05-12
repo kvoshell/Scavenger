@@ -1,15 +1,16 @@
 <%= render "./partials/subheader" %>
 
-  <div class="row landing">
-    <div class="col-md-3 sidebar">
-      <h1>Side Content Here</h1>
-    </div>
+  <div class="row topics">
+
+    <%= render "./partials/sidebar" %>
+
     <div class="col-md-9 main-content">
       <% @topics.each do |topic| %>
         <ul class="list-group">
           <li class="list-group-item justify-content-between">
-            <%= topic.title %>
-            <span class="badge badge-default badge-pill"><%= rand(1..35) %></span>
+            <h4><%= link_to topic.title, topic_path(topic.id) %></h4>
+            <p><%= "#{rand(1..35)} bookmarks by #{rand(1..35)} users" %></p>
+            <span class="badge badge-default badge-pill"><%= "Favorites: #{rand(1..35)}" %></span>
           </li>
         </ul>
         <% end %>
