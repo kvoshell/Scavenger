@@ -13,10 +13,10 @@
 .devise-modal-large {
   @include devise-modal;
   padding-top: 1%;
-  height: 70vh;
 }
 
 .modal-title {
+
   hr {
     width: 45%;
   }
@@ -24,6 +24,7 @@
 
 .field {
   margin: 2rem auto;
+  
   span {
     color: black;
   }

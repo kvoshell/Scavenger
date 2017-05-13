@@ -8,9 +8,14 @@
       <% @topics.each do |topic| %>
         <ul class="list-group">
           <li class="list-group-item justify-content-between">
-            <h4><%= link_to topic.title, topic_path(topic.id) %></h4>
-            <p><%= "#{rand(1..35)} bookmarks by #{rand(1..35)} users" %></p>
-            <span class="badge badge-default badge-pill"><%= "Favorites: #{rand(1..35)}" %></span>
+            <div class="item-left">
+              <h4><%= link_to topic.title, topic_path(topic.id) %></h4>
+              <p><%= "#{rand(1..35)} bookmarks by #{rand(1..35)} users" %></p>
+            </div>
+            <div class="item-right">
+              <%= button_to "Delete Topic", topic_path(topic.id), method: :delete, class: "btn btn-danger", data: {confirm: "Delete this topic?"} %>
+              <span class="badge badge-default badge-pill"><%= "Favorites: #{rand(1..35)}" %></span>
+            </div>
           </li>
         </ul>
         <% end %>

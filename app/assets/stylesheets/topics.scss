@@ -3,6 +3,7 @@
 
 .row.topics{
   background-color: $background-fill;
+  height: 100%;
 }
 
 .sidebar {
@@ -20,7 +21,7 @@
 .col-md-9.main-content {
   padding-left: 0;
   border-left: 1px solid $background-transparent;
-  
+
   ul,
   li.list-group-item {
     margin: 0;
@@ -28,12 +29,35 @@
     border-radius: 0%;
     border-bottom: 1px solid $background-transparent;
   }
-  a {
-    color: black;
-    text-decoration: none;
-  }
-  a:hover {
-    color: $red-links;
-    text-decoration: none;
-  }
+  
+    .item-left {
+      width: 50%;
+      float: left;
+      padding-left: 5%;
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      a:hover {
+        color: $red-links;
+        text-decoration: none;
+      }
+    }
+
+    .item-right {
+      width: 50%;
+      float: right;
+      text-align: right;
+      padding-top: 1%;
+      padding-right: 5%;
+    }
+}
+
+.col-md-9.main-content.topic-menu {
+  text-align: center;
+}
+
+.form-control.field {
+  width: 65%;
 }

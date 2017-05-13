@@ -25,7 +25,7 @@ require 'faker'
 
    20.times do
      Topic.create!(
-      title: Faker::Hipster.sentence
+      title: Faker::Hipster.word
       #  body: Faker::Hipster.paragraph
       )
    end
@@ -35,7 +35,7 @@ require 'faker'
    100.times do
      Bookmark.create!(
       url: "https://www.hipster.com",
-      topic_id: rand(1..20),
+      topic_id: 20, # rand(1..20),
       title: Faker::Hipster.sentence
      )
    end

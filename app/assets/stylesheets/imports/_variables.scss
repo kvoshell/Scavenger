@@ -1,6 +1,6 @@
 // Colors
 
-$background-transparent: rgba(52, 52, 52, 0.2);
+$background-transparent: rgba(52, 52, 52, 0.5);
 $background-opaque: rgba(52,52,52,.7);
 $background-fill: rgba(205, 205, 205, .85);
 $background-fill-opaque: rgba(205, 205, 205, .35);
@@ -23,8 +23,8 @@ hr {
 
 @mixin actions-landing {
   color: $white-accent;
-  margin-top: 2rem;
-  height: 8vh;
+  padding-top: 2rem;
+  height: 10vh;
 
   a {
     border: 1px solid $white-accent;
@@ -58,14 +58,14 @@ hr {
 
 @mixin devise-modal {
   font-family: $main-font;
-  height: 65vh;
+  height: 75vh;
   max-width: 55vw;
   background-color: $background-transparent;
   color: $white-accent;
   border: 1px solid;
   border-radius: 2%;
   padding-top: 2%;
-  margin: 10vh auto 0 auto;
+  margin: 5vh auto 0 auto;
   text-align: center;
   overflow: scroll;
 
@@ -80,7 +80,7 @@ hr {
 
   ul {
     height: 50%;
-    
+
     li {
       margin: 0 2.5rem;
       font-size: 1.75rem;

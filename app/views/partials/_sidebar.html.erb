@@ -3,7 +3,8 @@
     <h3><%= "#{current_user.username.capitalize}'s Chatter Stats:" %></h3><hr />
   </div>
   <div class="sidebar-stats">
-    <h3>12 Topics</h3>
+    <h3><%= "#{@topic_count} Topics" %></h3>
+    <!-- <h3><%= "#{@bookmark_count} Bookmarks" %></h3> -->
     <h3>65 Bookmarks</h3>
   </div>
   <div class="sidebar-title">
