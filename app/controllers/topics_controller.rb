@@ -1,7 +1,5 @@
 class TopicsController < ApplicationController
 
-  before_action :authenticate_user!
-
   def create
     @topic = Topic.new
     @topic.title = params[:topic][:title]

@@ -15,7 +15,6 @@ class BookmarkController < ApplicationController
 
   def index
     @bookmarks = Bookmark.all
-    # @bookmark_count = Bookmark.count
   end
 
   def show

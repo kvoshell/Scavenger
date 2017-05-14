@@ -8,8 +8,6 @@
 
 .navbar-default.upper {
   background-color: $navbar-dark-opaque;
-  margin: 0;
-  border: 0;
   @include navbar-items;
 
   a.nav-item.nav-link {
@@ -22,8 +20,6 @@
 
 .navbar-default.lower {
   background-color: $navbar-light-opaque;
-  margin: 0;
-  border: 0;
   text-align: center;
   border-bottom: 1px solid $background-transparent;
   @include navbar-items;

@@ -24,7 +24,11 @@
 
 .field {
   margin: 2rem auto;
-  
+
+  hr {
+    width: 45%;
+  }
+
   span {
     color: black;
   }
@@ -37,6 +41,11 @@
 .devise-partials {
   margin-top: 2rem;
   font-size: 105%;
+
+  ul {
+    text-align: center;
+    padding: 0;
+  }
 }
 
 a.devise-links {

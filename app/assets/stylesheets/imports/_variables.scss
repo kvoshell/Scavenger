@@ -17,10 +17,7 @@ $red-soft: rgb(133,90,92);
 $main-font: 'Josefin Sans', monospace;
 
 
-hr {
-  width: 45%;
-}
-
+// Mixins
 @mixin actions-landing {
   color: $white-accent;
   padding-top: 2rem;
@@ -58,7 +55,7 @@ hr {
 
 @mixin devise-modal {
   font-family: $main-font;
-  height: 75vh;
+  height: 77vh;
   max-width: 55vw;
   background-color: $background-transparent;
   color: $white-accent;
@@ -77,6 +74,8 @@ hr {
 
 @mixin navbar-items {
   width: 100%;
+  margin: 0;
+  border: 0;
 
   ul {
     height: 50%;
