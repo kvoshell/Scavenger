@@ -1,0 +1,78 @@
+// Colors
+$background-transparent: rgba(52, 52, 52, 0.5)
+$background-opaque: rgba(52,52,52,.7)
+$background-fill: rgba(205, 205, 205, .85)
+$background-fill-opaque: rgba(205, 205, 205, .35)
+$navbar-dark: rgb(0, 84, 131)
+$navbar-dark-opaque: rgba(0, 84, 131, .7)
+$navbar-light: rgb(192, 214, 223)
+$navbar-light-opaque: rgba(192, 214, 223, .8)
+$white-accent: rgb(244, 244, 250)
+$green-links: rgb(89,172,140)
+$green-links-dark: rgb(7, 91, 59)
+$red-links: rgb(132,16,31)
+$red-soft: rgb(133,90,92)
+
+// Fonts
+$main-font: 'Josefin Sans', monospace
+$logo-font: 'Special Elite', cursive
+
+// Mixins
+=actions-landing
+  color: $white-accent
+  padding-top: 2rem
+  height: 10vh
+
+  a
+    border: 1px solid $white-accent
+    border-radius: 4%
+    background-color: $background-transparent
+    padding: .85rem
+    text-decoration: none
+    color: $white-accent
+    font-size: 200%
+    margin: 2rem
+
+  a:hover
+    color: $green-links
+    border-color: $green-links
+    text-decoration: none
+
+  input
+    border: 1px solid $white-accent
+    border-radius: 4%
+    background-color: $background-transparent
+    padding: .85rem
+
+  input:hover
+    color: $green-links
+    border-color: $green-links
+
+=devise-modal
+  font-family: $main-font
+  height: 77vh
+  max-width: 55vw
+  background-color: $background-transparent
+  color: $white-accent
+  border: 1px solid
+  border-radius: 2%
+  padding-top: 2%
+  margin: 5vh auto 0 auto
+  text-align: center
+  overflow: scroll
+
+  h1
+    margin-top: 1rem
+    font-size: 4.25rem
+
+=navbar-items
+  width: 100%
+  margin: 0
+  border: 0
+
+  ul
+    height: 50%
+
+    li
+      margin: 0 2.5rem
+      font-size: 1.75rem
