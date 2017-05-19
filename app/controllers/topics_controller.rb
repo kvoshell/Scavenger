@@ -1,5 +1,23 @@
 class TopicsController < ApplicationController
 
+  before_action :require_sign_in, except: :index
+
+  def new
+    @topic = Topic.new
+  end
+
+  def index
+    @topics = Topic.all
+    @topic_count = Topic.count
+  end
+
+  def show
+    @topic = Topic.find(params[:id])
+  end
+
+  def edit
+  end
+
   def create
     @topic = Topic.new
     @topic.title = params[:topic][:title]
@@ -14,20 +32,6 @@ class TopicsController < ApplicationController
     end
   end
 
-  def index
-    @topics = Topic.all
-    @topic_count = Topic.count
-  end
-
-  def show
-    @topic = Topic.find(params[:id])
-  end
-
-  def new
-    @topic = Topic.new
-  end
-
-
   def destroy
     @topic = Topic.find(params[:id])
     if @topic.destroy
@@ -37,8 +41,5 @@ class TopicsController < ApplicationController
       flash.now[:alert] = "Unable to delete #{@topic.title}."
       render :show
     end
-  end
-
-  def edit
   end
 end

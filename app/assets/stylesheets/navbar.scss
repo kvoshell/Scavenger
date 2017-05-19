@@ -27,12 +27,18 @@
   li.nav-item.nav-link {
     height: 100%;
   }
+
   a.nav-item.nav-link{
     color: $navbar-dark;
   }
+
   a.nav-item.nav-link:hover {
     color: $red-links;
   }
+}
+
+.nav-item.nav-link.logo {
+  font-family: $logo-font;
 }
 
 .nav.navbar-nav {
@@ -40,16 +46,22 @@
 }
 
 .navbar-default.footer {
+  font-family: $logo-font;
   bottom: 0;
   width: 100%;
   background-color: $background-opaque;
   height: 10vh;
-  text-align: center;
+  text-align: left;
+  padding-left: 8%;
 
   h4,
   a {
     padding-top: 3vh;
     margin: 0;
     color: $red-links;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $red-soft;
   }
 }

@@ -4,6 +4,7 @@
   <title>Scavenger</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Josefin+Sans', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Special+Elite', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -20,7 +21,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navabar-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Scavenger", topics_path, class: "nav-item nav-link" %></li>
+            <li><%= link_to "scavenger", topics_path, class: "nav-item nav-link logo" %></li>
             <li><%= link_to "About", welcome_about_path, class: "nav-item nav-link" %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">

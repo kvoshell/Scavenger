@@ -1,14 +1,13 @@
-<div class="col-md-3 sidebar">
+<div class="col-md-4 sidebar">
   <div class="sidebar-title">
-    <h3><%= "#{current_user.username.capitalize}'s Chatter Stats:" %></h3><hr />
+    <h3><%= "#{current_user.username.capitalize}'s Scavenger Stats:" %></h3><hr />
   </div>
   <div class="sidebar-stats">
-    <h3><%= "#{@topic_count} Topics" %></h3>
-    <!-- <h3><%= "#{@bookmark_count} Bookmarks" %></h3> -->
-    <h3>65 Bookmarks</h3>
+    <h3><%= "#{Topic.count} Topics" %></h3>
+    <h3><%= "#{Bookmark.count} Bookmarks" %></h3>
   </div>
   <div class="sidebar-title">
-    <h3>Chatter Favorites:</h3><hr />
+    <h3>Scavenger Favorites:</h3><hr />
   </div>
   <div class="sidebar-stats" >
     <h3>34 Topics</h3>

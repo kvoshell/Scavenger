@@ -10,12 +10,13 @@ $navbar-light: rgb(192, 214, 223);
 $navbar-light-opaque: rgba(192, 214, 223, .8);
 $white-accent: rgb(244, 244, 250);
 $green-links: rgb(89,172,140);
+$green-links-dark: rgb(7, 91, 59);
 $red-links: rgb(132,16,31);
 $red-soft: rgb(133,90,92);
 
 // Fonts
 $main-font: 'Josefin Sans', monospace;
-
+$logo-font: 'Special Elite', cursive;
 
 // Mixins
 @mixin actions-landing {
