@@ -1,4 +1,7 @@
 nav.navbar-default.footer.navbar-fixed-bottom
   h4
     | ©2017 | 
-    = link_to "scavenger", topics_path
+    - if user_signed_in?
+      = link_to "scavenger", topics_path
+    - else
+      = link_to "scavenger", '#'

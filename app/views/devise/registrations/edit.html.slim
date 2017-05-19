@@ -9,6 +9,7 @@
       .field
         span
           = f.text_field :username, placeholer: "Username", autofocus: true
+      .field
         span
           = f.email_field :email, placeholder: "Email"
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
@@ -17,20 +18,20 @@
           = resource.unconfirmed_email
       .field
         span
+          = f.password_field :current_password, placeholder: "Current Password", autocomplete: "off"
+      .field
+        span
           = f.password_field :password, placeholder: "New Password (optional)", autocomplete: "off"
       .field
         span
-          = f.password_field :password_confirmation, placeholder: "Confirm Password", autocomplete: "off"
-      .field
-        span
-          = f.password_field :current_password, placeholder: "Current Password", autocomplete: "off"
+          = f.password_field :password_confirmation, placeholder: "Confirm New Password", autocomplete: "off"
       .actions
         = f.submit "Update"
     h3
       | Cancel my account
     p
       | Unhappy? 
-      = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
+      = button_to "Cancel my account", registration_path(resource_name), class: 'btn btn-danger', data: { confirm: "Are you sure?" }, method: :delete
     .devise-partials
       = render "devise/shared/links"
       = render "partials/devise_flash"

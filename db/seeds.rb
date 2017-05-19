@@ -1,5 +1,7 @@
 require 'faker'
 
+  # Random Seeding for Development
+
 
   # admin = User.create!(
   #  email: 'admin@example.com',
@@ -23,25 +25,24 @@ require 'faker'
   #
   #  users = User.all
 
-   20.times do
-     Topic.create!(
-      title: Faker::Hipster.word
-      #  body: Faker::Hipster.paragraph
-      )
-   end
-
-   topics = Topic.all
-
-   100.times do
-     Bookmark.create!(
-      url: "https://www.hipster.com",
-      topic_id: 20, # rand(1..20),
-      title: Faker::Hipster.sentence
-     )
-   end
-
-   bookmarks = Bookmark.all
-
-   puts "Seed Generated"
-   puts "#{Topic.count} topics created."
-   puts "#{Bookmark.count} bookmarks created."
+  #  20.times do
+  #    Topic.create!(
+  #     title: Faker::Hipster.word
+  #     )
+  #  end
+   #
+  #  topics = Topic.all
+   #
+  #  100.times do
+  #    Bookmark.create!(
+  #     url: "https://www.hipster.com",
+  #     topic_id: rand(1..20),
+  #     title: Faker::Hipster.sentence
+  #    )
+  #  end
+   #
+  #  bookmarks = Bookmark.all
+   #
+  #  puts "Seed Generated"
+  #  puts "#{Topic.count} topics created."
+  #  puts "#{Bookmark.count} bookmarks created."

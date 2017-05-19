@@ -23,13 +23,14 @@ group :production do
  gem 'figaro', '~> 1.0'
  gem 'devise'
  gem 'slim-rails'
+ gem 'faker'
+
 
  group :development, :test do
    gem 'byebug'
    gem 'spring'
    gem 'rspec-rails', '~> 3.0'
    gem 'shoulda'
-   gem 'faker'
    gem 'factory_girl_rails'
    gem 'pry-rails'
  end

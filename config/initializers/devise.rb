@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '571353bef342327f854b8caeba4f624c318983b70f61e6769fcfa4c11171120bbeb1bbc2951870ddf5b45accb2d596cc3ea02a6c8b5bc68457468da5a771fa4e'
+  config.secret_key = '571353bef342327f854b8caeba4f624c318983b70f61e6769fcfa4c11171120bbeb1bbc2951870ddf5b45accb2d596cc3ea02a6c8b5bc68457468da5a771fa4e'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -14,21 +14,21 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'kevinvoshell@gmail.com'
 
-  if Rails.env.development? || Rails.env.production?
-    ActionMailer::Base.delivery_method = :smtp
-    ActionMailer::Base.smtp_settings = {
-      address:        'smtp.sendgrid.net',
-      port:           '2525',
-      authentication: :plain,
-      user_name:      ENV['SENDGRID_USERNAME'],
-      password:       ENV['SENDGRID_PASSWORD'],
-      domain:         'heroku.com',
-      enable_starttls_auto: true
-    }
-  end
+  # if Rails.env.development? || Rails.env.production?
+  #   ActionMailer::Base.delivery_method = :smtp
+  #   ActionMailer::Base.smtp_settings = {
+  #     address:        'smtp.sendgrid.net',
+  #     port:           '2525',
+  #     authentication: :plain,
+  #     user_name:      ENV['SENDGRID_USERNAME'],
+  #     password:       ENV['SENDGRID_PASSWORD'],
+  #     domain:         'heroku.com',
+  #     enable_starttls_auto: true
+  #   }
+  # end
 
   # Configure the class responsible to send e-mails.
-  config.mailer = 'Devise::Mailer'
+  # config.mailer = 'Devise::Mailer'
 
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'

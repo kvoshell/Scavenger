@@ -2,7 +2,9 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
-  before_action :authenticate_user!
+  # Validation toggle for testing
+  # before_action :authenticate_user!
+  
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   include DeviseHelper
@@ -24,7 +26,7 @@ class ApplicationController < ActionController::Base
   private
 
   # Toggle authentication for testing
-  def authenticate_user!
-    super unless $disable_authentication
-  end
+  # def authenticate_user!
+  #   super unless $disable_authentication
+  # end
 end
