@@ -1,7 +1,5 @@
 class TopicsController < ApplicationController
 
-  before_action :require_sign_in, except: :index
-
   def new
     @topic = Topic.new
   end

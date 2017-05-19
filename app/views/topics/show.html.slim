@@ -1,0 +1,21 @@
+= render "./partials/subheader"
+.row.topics
+  = render "./partials/sidebar"
+  .col-md-8.main-content
+    - @topic.bookmarks.each do |bookmark|
+      ul.list-group
+        li.list-group-item.justify-content-between
+          .item-info
+            h4
+              = link_to "#{bookmark.url}"
+            p
+              = "#{bookmark.title}"
+            p
+              = "#{current_user.username} | #{bookmark.created_at.strftime("%b %d, %Y")}"
+          .item-options
+            = button_to "Edit Bookmark", edit_topic_bookmark_path(@topic, bookmark.id), method: :get, class: "btn options"
+            hr.h-divider
+            = button_to "Delete Bookmark", topic_bookmark_path(@topic, bookmark.id), method: :delete, class: "btn options danger", data: { confirm: "Delete this bookmark?" }
+            hr.h-divider
+            = button_to "Favorites: #{rand(1..35)}", '#', class: "btn options favorites"
+= render "./partials/footer"

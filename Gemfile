@@ -22,6 +22,7 @@ group :production do
  gem 'bootstrap-sass'
  gem 'figaro', '~> 1.0'
  gem 'devise'
+ gem 'slim-rails'
 
  group :development, :test do
    gem 'byebug'

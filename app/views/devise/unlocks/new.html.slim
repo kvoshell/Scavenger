@@ -1,0 +1,16 @@
+.row.devise-pages
+  .col-md-offset-7.col-md-4.devise-modal
+    .modal-title
+      h2
+        | Resend unlock instructions
+      hr
+    = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+      .field
+        span
+          = f.email_field :email, placeholder: "Email", autofocus: true
+      .actions
+        = f.submit "Resend unlock instructions"
+    .devise-partials
+      = render "devise/shared/links"
+      = render "partials/devise_flash"
+= render "partials/footer"

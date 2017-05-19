@@ -1,0 +1,15 @@
+= render "./partials/subheader"
+.row.topics
+  = render "./partials/sidebar"
+  .col-md-8.main-content.topic-menu
+    h2
+      | Create a New Entry
+    br
+    = form_for @topic do |topic|
+      .form-group
+        = topic.label :Topic
+        = topic.text_field :title, class: 'form-control field', placeholder: "New Topic"
+      .form-group
+        = topic.submit "Save", class: 'btn btn-success'
+        = link_to "Cancel", topics_path, class: 'btn btn-danger'
+= render "./partials/footer"

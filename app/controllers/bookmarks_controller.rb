@@ -1,7 +1,5 @@
 class BookmarksController < ApplicationController
 
-  before_action :require_sign_in
-
   def new
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.new

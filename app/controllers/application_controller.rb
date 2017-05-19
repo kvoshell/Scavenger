@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   include DeviseHelper
@@ -26,12 +26,5 @@ class ApplicationController < ActionController::Base
   # Toggle authentication for testing
   def authenticate_user!
     super unless $disable_authentication
-  end
-
-  def require_sign_in
-    unless current_user
-      flash[:alert] = "You must be logged in to do that"
-      redirect_to new_session_path
-    end
   end
 end

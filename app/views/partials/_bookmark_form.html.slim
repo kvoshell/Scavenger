@@ -1,0 +1,14 @@
+= form_for [@topic, @bookmark] do |bookmark|
+  - if controller.action_name == 'new'
+    .form-group
+      = bookmark.text_field :title, class: 'form-control field', placeholder: "Enter Bookmark Title"
+    .form-group
+      = bookmark.url_field :url, class: 'form-control field', placeholder: "Enter Bookmark URL"
+  - elsif controller.action_name == 'edit'
+    .form-group
+      = bookmark.text_field :title, class: 'form-control field', placeholder: "Edit Bookmark Title"
+    .form-group
+      = bookmark.url_field :url, class: 'form-control field', placeholder: "Edit Bookmark URL"
+  .form-group
+    = bookmark.submit "Save", method: :post, class: 'btn btn-success'
+    = link_to "Cancel", topic_bookmarks_path(@topic), class: 'btn btn-danger', data: { confirm: "Cancel New Bookmark?" }

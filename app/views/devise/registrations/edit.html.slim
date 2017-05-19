@@ -1,0 +1,37 @@
+.row.devise-pages
+  .col-md-offset-7.col-md-4.devise-modal
+    .modal-title
+      h2
+        | Edit 
+        = resource_name.to_s.humanize
+      hr
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      .field
+        span
+          = f.text_field :username, placeholer: "Username", autofocus: true
+        span
+          = f.email_field :email, placeholder: "Email"
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        div
+          | Currently waiting confirmation for: 
+          = resource.unconfirmed_email
+      .field
+        span
+          = f.password_field :password, placeholder: "New Password (optional)", autocomplete: "off"
+      .field
+        span
+          = f.password_field :password_confirmation, placeholder: "Confirm Password", autocomplete: "off"
+      .field
+        span
+          = f.password_field :current_password, placeholder: "Current Password", autocomplete: "off"
+      .actions
+        = f.submit "Update"
+    h3
+      | Cancel my account
+    p
+      | Unhappy? 
+      = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
+    .devise-partials
+      = render "devise/shared/links"
+      = render "partials/devise_flash"
+= render "partials/footer"

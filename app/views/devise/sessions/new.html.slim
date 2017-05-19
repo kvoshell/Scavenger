@@ -1,0 +1,23 @@
+.row.devise-pages
+  .col-md-offset-7.col-md-4.devise-modal
+    .modal-title
+      h2
+        | Log In
+      hr
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        span
+          = f.text_field :login, placeholder: 'Username', autofocus: true
+      .field
+        span
+          = f.password_field :password, placeholder: 'Password',autocomplete: "off"
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me
+          = f.label :remember_me
+      .actions
+        = f.submit "Log in"
+    .devise-partials
+      = render "devise/shared/links"
+      = render "partials/devise_flash"
+= render "partials/footer"
