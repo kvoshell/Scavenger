@@ -13,7 +13,7 @@
             p
               = "created on | #{bookmark.created_at.strftime("%b %d, %Y")}"
           .item-options
-            - if bookmark.user_id == current_user.id
+            - if bookmark.user == current_user
               = button_to "Edit Bookmark", edit_topic_bookmark_path(@topic, bookmark.id), method: :get, class: "btn options"
               hr.h-divider
               = button_to "Delete Bookmark", topic_bookmark_path(@topic, bookmark.id), method: :delete, class: "btn options danger", data: { confirm: "Delete this bookmark?" }
