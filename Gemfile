@@ -23,7 +23,6 @@ group :production do
  gem 'figaro', '~> 1.0'
  gem 'devise'
  gem 'slim-rails'
- gem 'faker'
  gem 'pundit'
 
 
@@ -34,4 +33,5 @@ group :production do
    gem 'shoulda'
    gem 'factory_girl_rails'
    gem 'pry-rails'
+   gem 'faker'
  end
