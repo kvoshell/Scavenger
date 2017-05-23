@@ -11,11 +11,12 @@
             p
               = "#{bookmark.title}"
             p
-              = "#{current_user.username} | #{bookmark.created_at.strftime("%b %d, %Y")}"
+              = "#{bookmark.user.username} | #{bookmark.created_at.strftime("%b %d, %Y")}"
           .item-options
-            = button_to "Edit Bookmark", edit_topic_bookmark_path(@topic, bookmark.id), method: :get, class: "btn options"
-            hr.h-divider
-            = button_to "Delete Bookmark", topic_bookmark_path(@topic, bookmark.id), method: :delete, class: "btn options danger", data: { confirm: "Delete this bookmark?" }
+            - if bookmark.user_id == current_user.id 
+              = button_to "Edit Bookmark", edit_topic_bookmark_path(@topic, bookmark.id), method: :get, class: "btn options"
+              hr.h-divider
+              = button_to "Delete Bookmark", topic_bookmark_path(@topic, bookmark.id), method: :delete, class: "btn options danger", data: { confirm: "Delete this bookmark?" }
             hr.h-divider
             = button_to "Favorites: #{rand(1..35)}", '#', class: "btn options favorites"
 = render "./partials/footer"

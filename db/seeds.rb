@@ -25,24 +25,26 @@ require 'faker'
   #
   #  users = User.all
 
-  #  20.times do
-  #    Topic.create!(
-  #     title: Faker::Hipster.word
-  #     )
-  #  end
-   #
-  #  topics = Topic.all
-   #
-  #  100.times do
-  #    Bookmark.create!(
-  #     url: "https://www.hipster.com",
-  #     topic_id: rand(1..20),
-  #     title: Faker::Hipster.sentence
-  #    )
-  #  end
-   #
-  #  bookmarks = Bookmark.all
-   #
-  #  puts "Seed Generated"
-  #  puts "#{Topic.count} topics created."
-  #  puts "#{Bookmark.count} bookmarks created."
+   20.times do
+     Topic.create!(
+      title: Faker::Hipster.word,
+      user_id: 1
+      )
+   end
+
+   topics = Topic.all
+
+   100.times do
+     Bookmark.create!(
+      url: "https://www.hipster.com",
+      topic_id: 20,
+      title: Faker::Hipster.sentence,
+      user_id: 1
+     )
+   end
+
+   bookmarks = Bookmark.all
+
+   puts "Seed Generated"
+   puts "#{Topic.count} topics created."
+   puts "#{Bookmark.count} bookmarks created."

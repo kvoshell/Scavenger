@@ -24,6 +24,7 @@ group :production do
  gem 'devise'
  gem 'slim-rails'
  gem 'faker'
+ gem 'pundit'
 
 
  group :development, :test do

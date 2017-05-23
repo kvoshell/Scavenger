@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
          :rememberable, :trackable, :validatable, :confirmable
 
   has_many :topics
+  has_many :bookmarks
 
   attr_accessor :login
 
