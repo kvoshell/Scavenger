@@ -1,7 +1,5 @@
 class BookmarksController < ApplicationController
 
-  before_action :authorize_user, except: [:index, :show, :new]
-
   def new
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.new
@@ -21,6 +19,7 @@ class BookmarksController < ApplicationController
     @bookmark = @topic.bookmarks.new
     @bookmark.title = params[:bookmark][:title]
     @bookmark.url = params[:bookmark][:url]
+    authorize @bookmark
 
     if @bookmark.save
       flash[:notice] = "Your bookmark was saved!"
@@ -34,12 +33,16 @@ class BookmarksController < ApplicationController
   def edit
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.find(params[:id])
+    authorize @bookmark
+
   end
 
   def update
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.find(params[:id])
     @bookmark.assign_attributes(bookmark_params)
+    authorize @bookmark
+
 
     if @bookmark.save
       flash[:notice] = "Bookmark was updated!"
@@ -53,6 +56,8 @@ class BookmarksController < ApplicationController
   def destroy
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.find(params[:id])
+    authorize @bookmark
+
     if @bookmark.destroy
       flash[:notice] = "\"#{@bookmark.title}\" was deleted successfully."
       redirect_to topic_path(@topic.id)
