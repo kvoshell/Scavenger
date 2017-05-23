@@ -9,7 +9,7 @@
             h4
               = link_to topic.title, topic_path(topic.id)
             p
-              = "#{rand(1..35)} bookmarks by #{rand(1..35)} users"
+              = "#{topic.bookmarks.count} bookmarks"
           .item-options
             = button_to "Add Bookmark", new_topic_bookmark_path(topic.id), method: :get, class: "btn options"
             hr.h-divider

@@ -1,5 +1,7 @@
 class BookmarksController < ApplicationController
 
+  before_action :authorize_user, except: [:index, :show, :new]
+
   def new
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.new
