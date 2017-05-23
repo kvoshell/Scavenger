@@ -7,11 +7,15 @@ class BookmarksController < ApplicationController
 
   def index
     @bookmarks = Bookmark.all
+    authorize @bookmark
+
   end
 
   def show
     @bookmark = Bookmark.find(params[:id])
     @bookmarks = Bookmark.all
+    authorize @bookmark
+
   end
 
   def create
