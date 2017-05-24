@@ -1,6 +1,6 @@
 class BookmarksController < ApplicationController
 
-  # before_action :authorize_user, except: [:new, :index, :show, :create]
+  before_action :authorize_user, except: [:new, :index, :show, :create]
 
   def new
     @topic = Topic.find(params[:topic_id])
@@ -76,11 +76,11 @@ class BookmarksController < ApplicationController
     params.require(:bookmark).permit(:title, :url)
   end
 
-  # def authorize_user
-  #   bookmark = Bookmark.find(params[:id])
-  #   unless current_user.id == bookmark.user_id
-  #     flash[:alert] = "Modification not permitted."
-  #     redirect_to topic_path
-  #   end
-  # end
+  def authorize_user
+    bookmark = Bookmark.find(params[:id])
+    unless current_user.id == bookmark.user_id
+      flash[:alert] = "Modification not permitted."
+      redirect_to topic_path
+    end
+  end
 end
