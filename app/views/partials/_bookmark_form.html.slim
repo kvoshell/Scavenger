@@ -11,4 +11,4 @@
       = bookmark.url_field :url, class: 'form-control field', placeholder: "Edit Bookmark URL"
   .form-group
     = bookmark.submit "Save", method: :post, class: 'btn btn-success'
-    = link_to "Cancel", topic_bookmarks_path(@topic), class: 'btn btn-danger', data: { confirm: "Cancel New Bookmark?" }
+    = link_to "Cancel", topics_path, class: 'btn btn-danger', data: { confirm: "Cancel New Bookmark?" }

@@ -9,14 +9,13 @@
             h4
               = link_to "#{bookmark.url}"
             p
-              = "#{bookmark.title}"
+              = "#{bookmark.user_id}"
             p
               = "created on | #{bookmark.created_at.strftime("%b %d, %Y")}"
           .item-options
-            - if policy(bookmark).edit?
-              = button_to "Edit Bookmark", edit_topic_bookmark_path(@topic, bookmark.id), method: :get, class: "btn options"
-              hr.h-divider
-              = button_to "Delete Bookmark", topic_bookmark_path(@topic, bookmark.id), method: :delete, class: "btn options danger", data: { confirm: "Delete this bookmark?" }
+            = button_to "Edit Bookmark", edit_topic_bookmark_path(@topic, bookmark.id), method: :get, class: "btn options"
+            hr.h-divider
+            = button_to "Delete Bookmark", topic_bookmark_path(@topic, bookmark.id), method: :delete, class: "btn options danger", data: { confirm: "Delete this bookmark?" }
             hr.h-divider
             = button_to "Favorites: #{rand(1..35)}", '#', class: "btn options favorites"
 = render "./partials/footer"
