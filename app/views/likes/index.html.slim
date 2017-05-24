@@ -1,0 +1,17 @@
+= render "./partials/subheader"
+.row.topics
+  = render "./partials/sidebar"
+  .col-md-8.main-content
+    - @likes.each do |like|
+      ul.list-group
+        li.list-group-item.justify-content-between
+          .item-info
+            h4
+              =link_to "#{like.bookmark.url}"
+            p 
+              = "#{like.bookmark.title}"
+            p 
+              = "created on | #{like.bookmark.created_at.strftime("%b %d, %Y")}"
+              
+            
+= render "partials/footer"

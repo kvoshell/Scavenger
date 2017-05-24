@@ -6,6 +6,7 @@ RSpec.describe Bookmark, type: :model do
   let (:topic) { Topic.create!(title: 'New Topic title', id: 1) }
 
   it { is_expected.to belong_to(:topic) }
+  it { is_expected.to have_many(:likes) }
 
   describe "attributes" do
     it "has id, url, topic_id, title" do

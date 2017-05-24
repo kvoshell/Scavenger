@@ -9,7 +9,7 @@
             h4
               = link_to "#{bookmark.url}"
             p
-              = "#{bookmark.user_id}"
+              = "#{bookmark.title}"
             p
               = "created on | #{bookmark.created_at.strftime("%b %d, %Y")}"
           .item-options
@@ -17,5 +17,5 @@
             hr.h-divider
             = button_to "Delete Bookmark", topic_bookmark_path(@topic, bookmark.id), method: :delete, class: "btn options danger", data: { confirm: "Delete this bookmark?" }
             hr.h-divider
-            = button_to "Favorites: #{rand(1..35)}", '#', class: "btn options favorites"
+            =render partial: './likes/like', locals: { bookmark: @bookmark }
 = render "./partials/footer"

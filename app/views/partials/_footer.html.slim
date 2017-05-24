@@ -4,4 +4,4 @@ nav.navbar-default.footer.navbar-fixed-bottom
     - if user_signed_in?
       = link_to "scavenger", topics_path
     - else
-      = link_to "scavenger", '#'
+      = link_to "scavenger", new_user_session_path

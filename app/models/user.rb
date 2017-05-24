@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
          :rememberable, :trackable, :validatable, :confirmable
 
   has_many :topics
-  has_many :bookmarks
+  has_many :bookmarks, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   attr_accessor :login
 
@@ -31,5 +32,9 @@ class User < ActiveRecord::Base
       elsif conditions.has_key?(:username) || conditions.has_key?(:email)
         where(conditions.to_hash).first
       end
+  end
+
+  def liked(bookmark)
+    likes.where(bookmark_id: bookmark.id).first
   end
 end

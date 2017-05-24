@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe BookmarksController, type: :controller do
 
-  let(:topic) { Topic.create!(title: "Topic Title", user_id: 1) }
+  let(:topic) { Topic.create!(title: "Topic Title", user_id: 1, topic_id: 1) }
   let(:bookmark) { Bookmark.create!(title: "New Title", url: "http://www.hipster.com", topic_id: topic.id, user_id: 1) }
 
 
