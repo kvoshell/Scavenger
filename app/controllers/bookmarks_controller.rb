@@ -7,15 +7,15 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new
   end
 
-  def index
-    @bookmarks = Bookmark.all
+  # def index
+  #   @bookmarks = Bookmark.all
 
-  end
+  # end
 
   def show
-    @bookmark = Bookmark.find(params[:id])
-    @bookmarks = Bookmark.all
-
+    @topic = Topic.find(params[:topic_id])
+    @bookmarks = @topic.bookmarks.all
+    # @bookmark = Bookmark.find(params[:id])
   end
 
   def create
