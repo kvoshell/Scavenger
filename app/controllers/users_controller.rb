@@ -8,6 +8,10 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
+    @user = User.find(params[:id])
+    # @likes= current_user.likes.build(bookmark: @bookmark)
+    @user_bookmarks = @user.bookmarks
+    @liked_bookmarks = @user.likes
   end
 
   # GET /users/new

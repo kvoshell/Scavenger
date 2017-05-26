@@ -12,4 +12,5 @@ nav.navbar-default.fixed-top.lower
           = link_to "Search Topics", topics_path, class: "nav-item nav-link"
         li 
           = link_to "View Likes", likes_index_path, class: "nav-item nav-link"
-          
+        li 
+          = link_to "User Snapshot", user_path(current_user), class: "nav-item nav-link"

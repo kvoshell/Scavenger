@@ -1,15 +1,59 @@
-p#notice = notice
+= render "./partials/subheader"
+.row.topics
+  = render "./partials/sidebar"
+  .col-md-8.main-content
+    ul.list-group
+      li.list-group-item.justify-content-between
+        .item-info
+          h2
+           | User Created Bookmarks
+    - @user_bookmarks.each do |bookmark|
+      ul.list-group
+        li.list-group-item.justify-content-between
+          .item-info
+            h4
+              = link_to "#{bookmark.url}"
+            p
+              = "#{bookmark.title}"
+            p
+              = "created on | #{bookmark.created_at.strftime("%b %d, %Y")}"
+          / .item-options
+          /   p.btn.options.snapshot 
+          /     |  "User Created"
+    ul.list-group
+      li.list-group-item.justify-content-between
+        .item-info
+          h2
+           | Liked Bookmarks
+    - @liked_bookmarks.each do |likes|
+      ul.list-group
+        li.list-group-item.justify-content-between
+          .item-info
+            h4
+              =link_to "#{likes.bookmark.url}"
+            p 
+              = "#{likes.bookmark.title}"
+            p 
+              = "created on | #{likes.bookmark.created_at.strftime("%b %d, %Y")}"
+          / .item-options
+          /   p.btn.options.favorites.snapshot 
+          /     i.glyphicon.glyphicon-star
+          /     |   Liked!
+          /   -if policy(Like.new).create?  
+          /     - if like = current_user.liked(bookmark)
+          /       = link_to [@topic, bookmark, like], class: 'btn options favorites', method: :delete do
+          /         i.glyphicon.glyphicon-star-empty
+          /         |   Unlike
+          /     - else
+          /       = link_to topic_bookmark_likes_path[@topic, bookmark, Like.new], class: 'btn options favorites', method: :post do
+          /         i.glyphicon.glyphicon-star
+          /         |   Like
+              /   = link_to topic_bookmark_like_path(@topic, likes.bookmark.id, likes.id), class: 'btn options favorites', method: :delete do
+              /     i.glyphicon.glyphicon-star-empty
+              /     |   Unlike
+              / - else
+              /   = link_to topic_bookmark_likes_path(likes.bookmark.topic_id, likes.bookmark.id), class: 'btn options favorites', method: :post do
+              /     i.glyphicon.glyphicon-star
+              /     |   Like
 
-p
-  strong Name:
-  = @user.name
-p
-  strong Email:
-  = @user.email
-p
-  strong Login:
-  = @user.login
-
-= link_to 'Edit', edit_user_path(@user)
-'  |
-= link_to 'Back', users_path
+= render "partials/footer"
