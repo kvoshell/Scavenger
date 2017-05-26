@@ -1,7 +1,4 @@
-/ = render "./partials/subheader"
-/ .row.topics
-/   = render "./partials/sidebar"
-/   .col-md-8.main-content
+
 - @topic.bookmarks.each do |bookmark|
   ul.list-group
     li.list-group-item.justify-content-between
@@ -17,5 +14,12 @@
         hr.h-divider
         = button_to "Delete Bookmark", topic_bookmark_path(@topic, bookmark.id), method: :delete, class: "btn options danger", data: { confirm: "Delete this bookmark?" }
         hr.h-divider
-        =render partial: './likes/like', locals: { bookmark: @bookmark }
-/ = render "./partials/footer"
+        -if policy(Like.new).create?  
+          - if like = current_user.liked(bookmark)
+            = link_to [@topic, bookmark, like], class: 'btn options favorites', method: :delete do
+              i.glyphicon.glyphicon-star-empty
+              |   Unlike
+          - else
+            = link_to [@topic, bookmark, Like.new], class: 'btn options favorites', method: :post do
+              i.glyphicon.glyphicon-star
+              |   Like
