@@ -17,7 +17,6 @@ class BookmarksController < ApplicationController
     @bookmark = @topic.bookmarks.new
     @bookmark.title = params[:bookmark][:title]
     @bookmark.url = params[:bookmark][:url]
-    # @bookmark.user_id = current_user.id
 
     if @bookmark.save
       flash[:notice] = "Your bookmark was saved!"
@@ -39,7 +38,6 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
     @bookmark.assign_attributes(bookmark_params)
     authorize @bookmark
-
 
     if @bookmark.save
       flash[:notice] = "Bookmark was updated!"

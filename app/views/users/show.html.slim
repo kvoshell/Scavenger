@@ -42,12 +42,4 @@
                 = button_to topic_bookmark_likes_path[@topic, bookmark, Like.new], class: 'btn options favorites', method: :post do
                   i.glyphicon.glyphicon-star
                   |   Like
-              /   = link_to topic_bookmark_like_path(@topic, likes.bookmark.id, likes.id), class: 'btn options favorites', method: :delete do
-              /     i.glyphicon.glyphicon-star-empty
-              /     |   Unlike
-              / - else
-              /   = link_to topic_bookmark_likes_path(likes.bookmark.topic_id, likes.bookmark.id), class: 'btn options favorites', method: :post do
-              /     i.glyphicon.glyphicon-star
-              /     |   Like
-
 = render "partials/footer"
