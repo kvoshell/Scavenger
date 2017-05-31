@@ -35,6 +35,6 @@ class User < ActiveRecord::Base
   end
 
   def liked(bookmark)
-    likes.where(bookmark_id: bookmark.id).first
+    likes.where(bookmark_id: bookmark).first
   end
 end
