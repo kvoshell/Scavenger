@@ -1,28 +1,8 @@
-== README
+== Scavenger
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Scavenger is an online bookmark tool that allows users to manage, share, and like bookmarks.
+Bookmarks, along with a short description, can be added for virtually any website.  Bookmarks are
+organized by topic, and users can browse and 'like' bookmarks posted by other users, as well as view these 'likes'
+in an organized and easy to access manner.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Scavenger was built with Ruby on Rails and lives at https://scavenger-chicago.herokuapp.com/
