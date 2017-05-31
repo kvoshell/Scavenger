@@ -6,33 +6,11 @@
 @import bootstrap-sprockets
 @import bootstrap
 
+@import imports/main
 @import imports/variables
 @import imports/navbar
-@import imports/bookmarks
 @import imports/topics
+@import imports/bookmarks
 @import imports/devise
 @import imports/welcome
 @import imports/about
-
-*, *::before, *::after
-  -moz-box-sizing: border-box
-  -webkit-box-sizing: border-box
-  box-sizing: border-box
-  overflow-x: hidden
-
-html, body
-  height: 100%
-
-body
-  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), image-url('landing_background.jpg')
-  background-repeat: no-repeat
-  background-attachment: fixed
-  background-position: center center
-  background-size: cover
-  padding-bottom: 8vh
-
-.container-fluid
-  position: relative
-  height: 100%
-  padding: 0
-  margin: 0
