@@ -1,8 +1,19 @@
 == Scavenger
 
-Scavenger is an online bookmark tool that allows users to manage, share, and like bookmarks.
+Scavenger is an online bookmark tool that allows users to 
+create, edit, manage, share, and like bookmarks from an individual account.
+
 Bookmarks, along with a short description, can be added for virtually any website.  Bookmarks are
-organized by topic, and users can browse and 'like' bookmarks posted by other users, as well as view these 'likes'
+organized by topic, and users can browse and 'like' bookmarks posted by other users, as well as view and manage these 'likes'
 in an organized and easy to access manner.
 
-Scavenger was built with Ruby on Rails and lives at https://scavenger-chicago.herokuapp.com/
+Scavenger was built with:
+  Language / Framework: Ruby on Rails
+  Design: Bootstrap and SASS
+  Views: Slim
+  Goodies: 
+   --Faker(data seeding) 
+   --Rspec(testing)
+   --Devise & Pundit (Authorization and authentication)
+
+Scavenger: https://scavenger-chicago.herokuapp.com/
