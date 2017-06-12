@@ -22,7 +22,7 @@ $logo-font: 'Special Elite', cursive
 =actions-landing
   color: $white-accent
   padding-top: 2rem
-  height: 10vh
+  height: 15vh
 
   a
     border: 1px solid $white-accent
@@ -31,8 +31,11 @@ $logo-font: 'Special Elite', cursive
     padding: .85rem
     text-decoration: none
     color: $white-accent
-    font-size: 200%
+    font-size: 4vh
     margin: 2rem
+
+    @media (max-width: 767px)
+      font-size: 2.75vw
 
   a:hover
     color: $green-links
@@ -48,6 +51,9 @@ $logo-font: 'Special Elite', cursive
   input:hover
     color: $green-links
     border-color: $green-links
+
+  @media (max-width: 767px)
+    font-size: 2vw
 
 =devise-modal
   font-family: $main-font
