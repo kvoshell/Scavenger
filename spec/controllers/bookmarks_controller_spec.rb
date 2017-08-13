@@ -19,9 +19,10 @@ RSpec.describe BookmarksController, type: :controller do
     end
 
     describe "POST create" do
-      it "increases the number of Bookmark by 1" do
-        expect {post :create, topic_id: topic.id, bookmark: {title: "New Title", url: "http://www.hipster.com", topic_id: topic.id }}.to change(Bookmark,:count).by(1)
-      end
+      describe "POST create" do
+        it "increases the number of Bookmark by 1" do
+          expect {post :create, topic_id: topic.id, bookmark: {title: "New Title", url: "http://www.hipster.com", topic_id: topic.id }}.to change(Bookmark,:count).by(1)
+        end
 
       it "assigns the new bookmark to @bookmark" do
         post :create, topic_id: topic.id, bookmark: {title: "New Title", url: "http://www.hipster.com", topic_id: topic.id}
